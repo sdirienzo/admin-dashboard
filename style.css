@@ -6,11 +6,12 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 body {
     height: 100vh;
+    font-family: 'Roboto', sans-serif;
 }
 
 .container {
@@ -27,6 +28,44 @@ body {
 .sidebar {
     grid-column: 1 / 2;
     grid-row: 1 / -1;
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    row-gap: 3.75rem;
+    padding: 1.25rem;
+    background-color: #334155;
+    color: white;
+}
+
+.logo .side-content p {
+    font-size: 2rem;
+}
+
+.logo .side-content svg {
+    height: 3rem;
+    width: 3rem;
+}
+
+.nav {
+    display: grid;
+    grid-auto-rows: min-content;
+    row-gap: 1.25rem;
+}
+
+.side-content {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    column-gap: 1.25rem;
+}
+
+.side-content svg {
+    justify-self: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.side-content p {
+    align-self: center;
+    font-size: 1.5rem;
 }
 
 .main-content {
