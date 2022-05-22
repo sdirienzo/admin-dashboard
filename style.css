@@ -1,3 +1,10 @@
+:root {
+    --color-primary: #334155;
+    --color-secondary: #2dd4bf;
+    --bg-color-primary: #e2e8f0;
+    --font-size-med: 1.125rem;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -23,6 +30,61 @@ body {
 
 .header {
     grid-column: 2 / 3;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    padding-left: 2rem;
+    padding-right: 5rem;
+}
+
+.header-top {
+    display: grid;
+    grid-template-columns: auto 375px;
+}
+
+.header-top-left {
+    display: grid;
+    grid-template-columns: min-content auto;
+    align-items: center;
+    column-gap: 1.25rem;
+}
+
+.header-top-right {
+    display: grid;
+    grid-template-columns: auto auto max-content;
+    column-gap: 1.5rem;
+    justify-content: end;
+    align-items: center;
+}
+
+input[type="search"] {
+    -webkit-appearance: none;
+    height: 30px;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--bg-color-primary);
+    padding: 1px 10px 1px 10px;
+    font-size: 1rem;
+}
+
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 50%;
+}
+
+.avatar svg {
+    height: 75%;
+    width: 75%;
+}
+
+.username-secondary {
+    font-size: var(--font-size-med);
+    font-weight: 500;
 }
 
 .sidebar {
@@ -32,7 +94,7 @@ body {
     grid-template-rows: auto auto 1fr;
     row-gap: 3.75rem;
     padding: 1.25rem;
-    background-color: #334155;
+    background-color: var(--color-primary);
     color: white;
 }
 
