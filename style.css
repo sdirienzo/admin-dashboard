@@ -2,8 +2,11 @@
     --color-primary: #334155;
     --color-secondary: #e2e8f0;
     --accent-color-primary: #2dd4bf;
+    --font-size-xsmall: 0.85rem;
+    --font-size-small: 1rem;
     --font-size-med: 1.125rem;
     --font-size-large: 1.5rem;
+    --font-size-xlarge: 2rem;
 }
 
 html {
@@ -14,7 +17,6 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
-    /* border: 1px solid red; */
 }
 
 body {
@@ -69,7 +71,7 @@ input[type="search"] {
     border-radius: 24px;
     background-color: var(--color-secondary);
     padding: 1px 10px 1px 10px;
-    font-size: 1rem;
+    font-size: var(--font-size-small);
 }
 
 .avatar {
@@ -138,7 +140,7 @@ input[type="search"] {
 .btn {
     border: none;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: var(--font-size-small);
     border-radius: 24px;
     height: 42px;
     width: 100px;
@@ -162,7 +164,7 @@ input[type="search"] {
 }
 
 .logo .side-content p {
-    font-size: 2rem;
+    font-size: var(--font-size-xlarge);
 }
 
 .logo .side-content svg {
@@ -190,19 +192,61 @@ input[type="search"] {
 
 .side-content p {
     align-self: center;
-    font-size: 1.5rem;
+    font-size: var(--font-size-large);
 }
 
 .main-content {
     grid-column: 2 / 3;
     display: grid;
     grid-template-columns: auto 335px;
+    column-gap: 30px;
     padding: 30px 30px 30px 20px;
     background-color: var(--color-secondary);
 }
 
-.main-content-left {
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, .75fr));
+    grid-auto-rows: 250px;
+    gap: 30px;
+}
 
+.card {
+    display: grid;
+    grid-template-columns: 10px 1fr;
+    grid-template-rows: 1fr;
+    border-radius: 15px;
+    background-color: white;
+}
+
+.card-highlight {
+    grid-column: 1 / 2;
+    grid-row: 1 / 5;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-color: var(--accent-color-primary);
+}
+
+.card-content {
+    display: grid;
+    grid-template-rows: min-content min-content 1fr;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+}
+
+.card-description {
+    color: gray;
+}
+
+.card-icons {
+    justify-self: end;
+    align-self: end;
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    column-gap: 1.5rem;
 }
 
 .main-content-right {
@@ -237,8 +281,8 @@ input[type="search"] {
     padding-right: 30px;
 }
 
-.announcement-title + p {
-    font-size: 0.85rem;
+.announcement-description {
+    font-size: var(--font-size-xsmall);
     color: grey;
 }
 
